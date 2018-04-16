@@ -61,6 +61,75 @@ var AboutComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/album-detail/album-detail.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/album-detail/album-detail.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  album-detail works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/album-detail/album-detail.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlbumDetailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AlbumDetailComponent = /** @class */ (function () {
+    function AlbumDetailComponent() {
+    }
+    AlbumDetailComponent.prototype.ngOnInit = function () {
+    };
+    AlbumDetailComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-album-detail',
+            template: __webpack_require__("./src/app/album-detail/album-detail.component.html"),
+            styles: [__webpack_require__("./src/app/album-detail/album-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AlbumDetailComponent);
+    return AlbumDetailComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/album.model.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Album; });
+var Album = /** @class */ (function () {
+    function Album(title, artist, description, id) {
+        this.title = title;
+        this.artist = artist;
+        this.description = description;
+        this.id = id;
+    }
+    return Album;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app.component.css":
 /***/ (function(module, exports) {
 
@@ -123,12 +192,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routing__ = __webpack_require__("./src/app/app.routing.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__marketplace_marketplace_component__ = __webpack_require__("./src/app/marketplace/marketplace.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__album_detail_album_detail_component__ = __webpack_require__("./src/app/album-detail/album-detail.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -150,7 +221,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__welcome_welcome_component__["a" /* WelcomeComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__marketplace_marketplace_component__["a" /* MarketplaceComponent */]
+                __WEBPACK_IMPORTED_MODULE_11__marketplace_marketplace_component__["a" /* MarketplaceComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__album_detail_album_detail_component__["a" /* AlbumDetailComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["a" /* BrowserModule */],
@@ -181,6 +253,8 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__welcome_welcome_component__ = __webpack_require__("./src/app/welcome/welcome.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__marketplace_marketplace_component__ = __webpack_require__("./src/app/marketplace/marketplace.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__album_detail_album_detail_component__ = __webpack_require__("./src/app/album-detail/album-detail.component.ts");
+
 
 
 
@@ -197,9 +271,13 @@ var appRoutes = [
     {
         path: 'marketplace',
         component: __WEBPACK_IMPORTED_MODULE_3__marketplace_marketplace_component__["a" /* MarketplaceComponent */]
+    },
+    {
+        path: 'albums/:id',
+        component: __WEBPACK_IMPORTED_MODULE_4__album_detail_album_detail_component__["a" /* AlbumDetailComponent */]
     }
 ];
-var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(appRoutes);
+var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forRoot(appRoutes);
 
 
 /***/ }),
@@ -214,7 +292,7 @@ module.exports = ""
 /***/ "./src/app/marketplace/marketplace.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Marketplace</h2>\n\n<p>All our fine products will be listed here shortly!</p>"
+module.exports = "<h2>Marketplace</h2>\n\n<div *ngFor=\"let album of albums\" (click)=\"goToDetailPage(album)\" class=\"panel panel-default\">\n    <div class=\"panel-body\">\n        <h3><em>{{album.title}}</em> by {{album.artist}}</h3>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -224,6 +302,8 @@ module.exports = "<h2>Marketplace</h2>\n\n<p>All our fine products will be liste
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarketplaceComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__album_model__ = __webpack_require__("./src/app/album.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -234,18 +314,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var MarketplaceComponent = /** @class */ (function () {
-    function MarketplaceComponent() {
+    function MarketplaceComponent(router) {
+        this.router = router;
+        this.albums = [
+            new __WEBPACK_IMPORTED_MODULE_1__album_model__["a" /* Album */]('Pulse', 'Pink Floyd', 'A live  album by the English progressive rock band originally released in 1995, on the label EMI in the United Kingdom.', 1),
+            new __WEBPACK_IMPORTED_MODULE_1__album_model__["a" /* Album */]('Funhouse', 'The Stooges', 'The second  album from the American rock band, released in 1970 by Elektra Records.', 2),
+            new __WEBPACK_IMPORTED_MODULE_1__album_model__["a" /* Album */]('Twilight of the Thunder God', 'Amon Amarth', 'Seventh album by the Swedish band, released in 2008, based on Thor\'s battle with the serpent Jörmungandr.', 3),
+            new __WEBPACK_IMPORTED_MODULE_1__album_model__["a" /* Album */]('Dilate', 'Ani DiFranco', 'Her highest-selling and most acclaimed album, released in 1996.', 4),
+            new __WEBPACK_IMPORTED_MODULE_1__album_model__["a" /* Album */]('Chopin - Complete Nocturnes', 'Brigitte Engerer', 'Released in 2010, this is Engerer\'s own rendition of the classical composer Chopin.', 5),
+            new __WEBPACK_IMPORTED_MODULE_1__album_model__["a" /* Album */]('Axis Bold As Love', 'The Jimi Hendrix Experience', 'Second studio album by the English-American band, released in 1967.', 6)
+        ];
     }
-    MarketplaceComponent.prototype.ngOnInit = function () {
+    MarketplaceComponent.prototype.goToDetailPage = function (clickedAlbum) {
+        this.router.navigate(['albums', clickedAlbum.id]);
+        // tslint:disable-next-line:semicolon
     };
+    ;
     MarketplaceComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-marketplace',
             template: __webpack_require__("./src/app/marketplace/marketplace.component.html"),
             styles: [__webpack_require__("./src/app/marketplace/marketplace.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
     ], MarketplaceComponent);
     return MarketplaceComponent;
 }());
